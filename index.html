@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daryn Tree</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        const translations = {
+            ru: {
+                'app-title': 'Daryn Tree',
+                'app-description': 'Простой инструмент для создания древовидных заметок',
+                'add-root': 'Добавить заметку',
+                'show-hidden-notes-btn': 'Показать скрытые',
+                'hide-all-notes-btn': 'Скрыть все',
+                'export-main': 'Экспорт',
+                'export-json': 'Экспорт в JSON',
+                'export-txt': 'Экспорт в TXT',
+                'export-md': 'Экспорт в Markdown',
+                'export-csv': 'Экспорт в CSV',
+                'export-html': 'Экспорт в HTML',
+                'import': 'Импорт',
+                'donate': 'Поддержать проект',
+                'kaspi-note-label': 'Поддержать через Kaspi:',
+                'kaspi-note-number': '+7 702 629 7045',
+                'new-note': 'Новая заметка',
+                'new-sub-note': 'Новая подзаметка',
+                'invalid-file': 'Неверный формат файла. Пожалуйста, выберите JSON, TXT, MD или CSV.',
+                'file-error': 'Ошибка при чтении файла.',
+                'paypal-locale': 'ru_RU'
+            },
+            en: {
+                'app-title': 'Daryn Tree',
+                'app-description': 'A simple tool for creating tree-like notes',
+                'add-root': 'Add Note',
+                'show-hidden-notes-btn': 'Show Hidden',
+                'hide-all-notes-btn': 'Hide All',
+                'export-main': 'Export',
+                'export-json': 'Export to JSON',
+                'export-txt': 'Export to TXT',
+                'export-md': 'Export to Markdown',
+                'export-csv': 'Export to CSV',
+                'export-html': 'Export to HTML',
+                'import': 'Import',
+                'donate': 'Support the project',
+                'kaspi-note-label': 'Support via Kaspi:',
+                'kaspi-note-number': '+7 702 629 7045',
+                'new-note': 'New note',
+                'new-sub-note': 'New sub-note',
+                'invalid-file': 'Invalid file format. Please select JSON, TXT, MD or CSV.',
+                'file-error': 'Error reading the file.',
+                'paypal-locale': 'en_US'
+            },
+            kk: {
+                'app-title': 'Daryn Tree',
+                'app-description': 'Ағаш тәрізді жазбалар жасауға арналған қарапайым құрал',
+                'add-root': 'Жазба қосу',
+                'show-hidden-notes-btn': 'Жасырынды көрсету',
+                'hide-all-notes-btn': 'Барлығын жасыру',
+                'export-main': 'Экспорт',
+                'export-json': 'JSON-ға экспорттау',
+                'export-txt': 'TXT-ға экспорттау',
+                'export-md': 'Markdown-ға экспорттау',
+                'export-csv': 'CSV-ға экспорттау',
+                'export-html': 'HTML-ға экспорттау',
+                'import': 'Импорт',
+                'donate': 'Жобаға қолдау көрсету',
+                'kaspi-note-label': 'Kaspi арқылы қолдау көрсету:',
+                'kaspi-note-number': '+7 702 629 7045',
+                'new-note': 'Жаңа жазба',
+                'new-sub-note': 'Жаңа кіші жазба',
+                'invalid-file': 'Файл пішімі қате. JSON, TXT, MD немесе CSV таңдаңыз.',
+                'file-error': 'Файлды оқу қатесі.',
+                'paypal-locale': 'kk_KZ'
+            }
+        };
+    </script>
+</head>
+<body>
+    <main>
+        <div class="header">
+            <div class="header-left">
+                <h1 id="app-title">Daryn Tree</h1>
+                <p id="app-description">Простой инструмент для создания древовидных заметок</p>
+            </div>
+            <div class="header-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn" data-lang="kk">KZ</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="ru">RU</button>
+                </div>
+                <div class="header-exports">
+                    <div class="dropdown-container">
+                        <button id="export-btn" class="btn btn-secondary"></button>
+                        <div id="export-dropdown" class="dropdown-menu hidden">
+                            <button id="export-json-btn"></button>
+                            <button id="export-txt-btn"></button>
+                            <button id="export-md-btn"></button>
+                            <button id="export-csv-btn"></button>
+                            <button id="export-html-btn"></button>
+                        </div>
+                    </div>
+                    <button id="import-btn" class="btn btn-secondary"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls-container">
+            <button id="add-root-btn" class="btn btn-primary"></button>
+            <button id="show-hidden-btn" class="btn btn-secondary"></button>
+        </div>
+
+        <div id="notes-container" class="notes-container"></div>
+    </main>
+
+    <footer class="donation-container">
+        <a id="donate-btn" class="btn btn-donate" target="_blank"></a>
+        <div id="kaspi-note-container" class="kaspi-note"></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
